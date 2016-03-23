@@ -1,0 +1,53 @@
+About
+============
+
+    Filters the input image and detects the contours.
+
+Dependencies
+============
+
+    OpenCV library is required.
+    sudo apt-get install opencv-dev
+
+    Optional IDE to browse and build the project files:    
+    sudo apt-get install codeblocks
+
+Building
+============
+
+    To build use:
+    cd build
+    make
+
+    The application will be in the folder "binary/release_x64".
+
+Usage
+============
+
+    contour_detection_filter [OPTION]
+        -i, --input_image IMAGE_PATH          specifies input image file IMAGE_PATH
+                                              (default "input_image.jpeg")
+        -m, --median_filter_size SIZE         changes the median filter aperture
+                                              SIZE (default 5)
+        -f, --filtered_image IMAGE_PATH       specifies the file IMAGE_PATH
+                                              to write the filtered image
+                                              (default "filtered_image.jpeg")
+        -a, --edge_linking_threshold VALUE    specifies edge linking threshold
+                                              VALUE (default 20)
+        -b, --strong_edge_threshold VALUE     specifies strong edge threshold
+                                              VALUE (default 50)
+        -o, --contours_image IMAGE_PATH       specifies the file IMAGE_PATH
+                                              to write the contours image
+                                              (default "contours_image.jpeg")
+        -h, --help                            display this help and exit
+
+    Example:
+    ./binary/release_x64/contour_detection_filter \
+        --input_image=data/input_image.jpeg \
+        --filtered_image=data/filtered_image.jpeg \
+        --contours_image=data/contours_image.jpeg && \
+    eog data/contours_image.jpeg
+
+
+
+
